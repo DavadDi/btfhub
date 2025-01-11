@@ -1,0 +1,33 @@
+name: Build Dependencies
+description: |
+  Install build dependencies to test and compile btfhub artifacts
+inputs:
+  from:
+    description: 'Install dependencies script option (pr, cron)'
+    required: true
+    default: 'pr'
+  run-on:
+    description: 'Set working-directory to run'
+    required: false
+    default: '.'
+runs:
+  using: composite
+  steps:
+    #
+    - name: Install ubuntu packages
+      run: |
+        ./tests/install-deps.sh ${{ inputs.from }}
+      shell: bash
+      working-directory: ${{ inputs.run-on }}
+    #
+    - name: Install pahole
+      run: |
+        ./3rdparty/pahole.sh
+      shell: bash
+      working-directory: ${{ inputs.run-on }}
+    #
+    # - name: Install bpftool
+    #   run: |
+    #     ./3rdparty/bpftool.sh
+    #   shell: bash
+    #   working-directory: ${{ inputs.run-on }}

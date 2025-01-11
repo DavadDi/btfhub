@@ -9,7 +9,7 @@ and **BTF** supportability over their kernel versions.
 In the tables bellow you will find BPF, BTF and HUB columns:
 
 * BPF - kernel has support for BPF programs (with or without embedded BTF info)
-* BTF - kernel is compiled with DEBUG_INFO_BTF (/sys/kernel/bpf/vmlinux avail)
+* BTF - kernel is compiled with DEBUG_INFO_BTF (/sys/kernel/btf/vmlinux avail)
 * HUB - there is a 1:1 kernel <-> BTF file available in this hub
 
 ### [CentOS](https://en.wikipedia.org/wiki/CentOS)
@@ -85,7 +85,10 @@ In the tables bellow you will find BPF, BTF and HUB columns:
 
 | Ubuntu Ver | Num     | Release Date | Kernel  | BPF | BTF | HUB |
 |------------|---------|--------------|---------|-----|-----|-----|
-| Bionic     | 18.04.2 | 2018-04-26   | 4.15.0  |  -  |  -  |  -  |
+| Xenial     | 16.04.2 | 2016-04-21   | 4.4.0   |  Y  |  -  |  Y  |
+| Xenial HWE | -       | -            | 4.15.0  |  Y  |  -  |  Y  |
+| Bionic     | 18.04.2 | 2018-04-26   | 4.15.0  |  Y  |  -  |  Y  |
+| Bionic     | -       | -            | 4.18.0  |  Y  |  -  |  Y  |
 | Bionic HWE | -       | -            | 5.4.0   |  Y  |  -  |  Y  |
 | Focal      | 20.04.2 | 2020-04-23   | 5.4.0   |  Y  |  -  |  Y  |
 | Focal HWE  | -       | -            | 5.8.0   |  Y  |  -  |  Y  |
@@ -96,3 +99,24 @@ In the tables bellow you will find BPF, BTF and HUB columns:
 
 > **Notes**: Bionic HWE, Focal and Focal HWE kernels need this HUB. All other
 > future Ubuntu releases will have BPF & BTF support enabled.
+
+### [Oracle Linux](https://en.wikipedia.org/wiki/Oracle_Linux#Software_updates_and_version_history)
+
+| Oracle | Release Date | RH Kernel   | UEK Kernel          | BPF | BTF | HUB |
+|--------|--------------|-------------|---------------------|-----|-----|-----|
+| 7.8    | 2020-04-08   | 3.10.0-1127 | 4.14.35-1902.300.11 |  Y  |  -  |  Y  |
+| 7.9    | 2020-10-07   | 3.10.0-1160 | 5.4.17-2011.6.2     |  Y  |  -  |  Y  |
+| 8.2    | 2020-05-06   | 4.18.0-193  | 5.4.17-2011.1.2     |  Y  |  -  |  Y  |
+| 8.3    | 2020-11-13   | 4.18.0-240  | 5.4.17-2011.7.4     |  Y  |  -  |  Y  |
+| 8.4    | 2021-05-26   | 4.18.0-305  | 5.4.17-2102.201.3   |  Y  |  -  |  Y  |
+| ...    | ...          | ...         | ...                 |  Y  |  Y  |  -  |
+
+
+### [Debian](https://en.wikipedia.org/wiki/Debian_version_history#Release_table)
+
+| Debian        | Release Date | Kernel  | BPF | BTF | HUB |
+|---------------|--------------|---------|-----|-----|-----|
+| 9 (Stretch)   | 2017-06-17   | 4.9.0   |  Y  |  -  |  Y  |
+| 10 (Buster)   | 2019-07-06   | 4.19.0  |  Y  |  -  |  Y  |
+| 11 (Bullseye) | 2021-08-14   | 5.10.0  |  Y  |  Y  |  -  |
+
